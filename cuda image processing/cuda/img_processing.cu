@@ -518,13 +518,14 @@ int main(int argc, char **argv) {
  cudaMemcpy(&results, d_results, sizeof(unsigned char) * (width * height), cudaMemcpyDeviceToHost);
 
 
-  clock_gettime(CLOCK_MONOTONIC, &finish);
-  time_difference(&start, &finish, &time_elapsed);
-  printf("Time elapsed was %lldns or %0.9lfs\n", time_elapsed,
-         (time_elapsed/1.0e9)); 
+ 
 
    cudaFree(&d_image);
   cudaFree(&d_results);
+   clock_gettime(CLOCK_MONOTONIC, &finish);
+  time_difference(&start, &finish, &time_elapsed);
+  printf("Time elapsed was %lldns or %0.9lfs\n", time_elapsed,
+         (time_elapsed/1.0e9)); 
 
   glutInit(&argc, argv);
   glutInitWindowSize(width * 2,height);

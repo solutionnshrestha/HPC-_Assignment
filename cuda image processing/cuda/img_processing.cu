@@ -437,9 +437,9 @@ unsigned char image[] = {0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
           + (input[h] * -1);
 
       if (r >= 0) { 
-        output[i] = 255;
-      } else {
         output[i] = 0;
+      } else {
+        output[i] = 255;
       }
     }
 }
